@@ -4,4 +4,5 @@
 .out/
 
 # intelliJ IDE files
+*.iml
 .DS_Store
