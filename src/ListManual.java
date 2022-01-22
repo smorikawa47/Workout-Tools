@@ -24,7 +24,7 @@ public class ListManual {
                 1. Type in the text box
                 2. Go to File on menu bar
                 3. Click Save in the drop down list
-                4. Name your file in the Save As box
+                4. Name your file in .txt form in the Save As box
                 5. Select the desired location to save a file
                 6. Click Save
 
