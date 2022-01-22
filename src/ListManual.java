@@ -28,7 +28,7 @@ public class ListManual {
                 5. Select the desired location to save a file
                 6. Click Save
 
-                Load up existing memo
+                Load up an existing memo
                 1. Go to File on menu bar
                 2. Click Open in the drop down list
                 3. Select the txt file you left your memo on
