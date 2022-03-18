@@ -14,6 +14,7 @@ public class Menu extends JFrame implements ActionListener {
     private final JMenuItem item3 = new JMenuItem("How to use");
     private final JMenuItem item4 = new JMenuItem("List");
     private final JMenuItem item5 = new JMenuItem("calendar");
+
     private final JButton close = new JButton("Close App");
 
     public Menu() {
@@ -28,6 +29,8 @@ public class Menu extends JFrame implements ActionListener {
         item3.addActionListener(this);
         item4.addActionListener(this);
         item5.addActionListener(this);
+
+
 
         menu1.add(item1);
         menu1.add(item2);
@@ -57,7 +60,8 @@ public class Menu extends JFrame implements ActionListener {
             type = "s";
             int min = 0;
             int sec = 0;
-            new Timer(type, min, sec);
+            int selection = 0;
+            new Timer(type, min, sec, selection);
 //            t.stopStopwatch();
         }
 
@@ -65,8 +69,25 @@ public class Menu extends JFrame implements ActionListener {
             type = "t";
             int min = 0;
             int sec = 0;
+            int selection = 0;
+            boolean isSelectionValid = false;
             boolean isMinValid = false;
             boolean isSecValid = false;
+
+            while(!isSelectionValid) {
+                selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Choose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise1!\n4: Surprise2!"));
+                if(selection == 1 || selection == 2 || selection == 3 || selection == 4) {
+                    isSelectionValid = true;
+                }
+                else {
+                    while(!isSelectionValid) {
+                        selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nChoose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise1!\n4: Surprise2!"));
+                        if(selection == 1 || selection == 2 || selection == 3 || selection == 4) {
+                            isSelectionValid = true;
+                        }
+                    }
+                }
+            }
 
             while(!isMinValid) {
                 min = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter minute number (0-60 min):"));
@@ -117,7 +138,7 @@ public class Menu extends JFrame implements ActionListener {
                 }
             }
 
-            new Timer(type, min, sec);
+            new Timer(type, min, sec, selection);
         }
 
         if(E.getSource() == item3) {
@@ -127,10 +148,6 @@ public class Menu extends JFrame implements ActionListener {
         if(E.getSource() == item4) {
             new WorkoutList();
         }
-
-//        if(E.getSource() == item5) {
-//            new CalendarTest();
-//        }
 
         close.addActionListener(e -> System.exit(0));
     }

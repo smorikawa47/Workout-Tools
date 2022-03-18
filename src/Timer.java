@@ -30,7 +30,7 @@ public class Timer {
 
     JButton close;
 
-    public Timer (String type, int min, int sec) {
+    public Timer (String type, int min, int sec, int selection) {
 
         window = new JFrame("Clock");
         window.setSize(800, 600);
@@ -86,7 +86,7 @@ public class Timer {
                 window.add(startButton);
                 window.add(stopButton);
 //                window.add(exitButton);
-                countdownTimer();
+                countdownTimer(selection);
 //                timer.start();
             }
         }
@@ -134,7 +134,7 @@ public class Timer {
 //        window.dispose();
 //    }
 
-    private void countdownTimer() {
+    private void countdownTimer(int selection) {
         timer = new javax.swing.Timer(1000, e -> {
             second--;
             ddSecond = dFormat.format(second);
@@ -151,9 +151,21 @@ public class Timer {
             }
 
             if(minute == 0 && second == 0) {
+                String filepath = "";
                 counterLabel.setText(ddMinute + ":" + ddSecond);
                 timer.stop();
-                String filepath = "audio.wav";
+                if (selection == 1) {
+                    filepath = "beaut.wav";
+                }
+                if (selection == 2) {
+                    filepath = "Electric-love.wav";
+                }
+                if (selection == 3) {
+                    filepath = "Geef1.wav";
+                }
+                if (selection == 4) {
+                    filepath = "Geef2.wav";
+                }
                 Music musicObj = new Music();
                 musicObj.playMusic(filepath);
                 window.dispose();

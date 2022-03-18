@@ -97,6 +97,7 @@ public class WorkoutList extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
+        //font color
         if(e.getSource() == fontColorButton) {
             JColorChooser colorChooser = new JColorChooser();
             Color color = colorChooser.showDialog(null, "Choose a color", Color.black);
