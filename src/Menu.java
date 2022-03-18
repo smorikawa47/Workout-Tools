@@ -22,7 +22,6 @@ public class Menu extends JFrame implements ActionListener {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu1 = new JMenu("Clock");
         JMenu menu2 = new JMenu("Workout Memo");
-//        JMenu menu3 = new JMenu("Calendar");
 
         item1.addActionListener(this);
         item2.addActionListener(this);
@@ -36,10 +35,10 @@ public class Menu extends JFrame implements ActionListener {
         menu1.add(item2);
         menu2.add(item3);
         menu2.add(item4);
-//        menu3.add(item5);
+
         menuBar.add(menu1);
         menuBar.add(menu2);
-//        menuBar.add(menu3);
+
         menuBar.add(close);
 
         try {
@@ -62,7 +61,6 @@ public class Menu extends JFrame implements ActionListener {
             int sec = 0;
             int selection = 0;
             new Timer(type, min, sec, selection);
-//            t.stopStopwatch();
         }
 
         if(E.getSource() == item2) {
