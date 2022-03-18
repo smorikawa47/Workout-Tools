@@ -94,7 +94,7 @@ public class Menu extends JFrame implements ActionListener {
                 }
                 else {
                     while(!isMinValid) {
-                        min = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input. Enter minute number (0-60 min):"));
+                        min = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter minute number (0-60 min):"));
                         if(min <= 60 && min >= 0) {
                             isMinValid = true;
                         }
@@ -114,7 +114,7 @@ public class Menu extends JFrame implements ActionListener {
                     }
                     else {
                         while(!isSecValid) {
-                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input. Enter second number (1-59 sec):"));
+                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (1-59 sec):"));
                             if(sec <= 59 && sec >= 1) {
                                 isSecValid = true;
                             }
@@ -127,7 +127,7 @@ public class Menu extends JFrame implements ActionListener {
                         isSecValid = true;
                     } else {
                         while (!isSecValid) {
-                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input. Enter second number (0-59 sec):"));
+                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (0-59 sec):"));
                             if (sec <= 59 && sec >= 0) {
                                 isSecValid = true;
                             }
