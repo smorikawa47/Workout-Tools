@@ -73,14 +73,14 @@ public class Menu extends JFrame implements ActionListener {
             boolean isSecValid = false;
 
             while(!isSelectionValid) {
-                selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Choose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise1!\n4: Surprise2!"));
-                if(selection == 1 || selection == 2 || selection == 3 || selection == 4) {
+                selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Choose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise!"));
+                if(selection == 1 || selection == 2 || selection == 3) {
                     isSelectionValid = true;
                 }
                 else {
                     while(!isSelectionValid) {
-                        selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nChoose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise1!\n4: Surprise2!"));
-                        if(selection == 1 || selection == 2 || selection == 3 || selection == 4) {
+                        selection = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nChoose your music\n1: Beautiful Mistake - Maroon5\n2: Electric Love - BØRNS\n3: Surprise!"));
+                        if(selection == 1 || selection == 2 || selection == 3) {
                             isSelectionValid = true;
                         }
                     }

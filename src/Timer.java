@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class Timer {
@@ -20,11 +18,6 @@ public class Timer {
     private final JButton stopButton = new JButton("Stop");
     //stopwatch
     private final JButton resetButton = new JButton("Reset");
-    //stopwatch
-//    private final JButton exitButton = new JButton("Exit");
-
-    //stopwatch & timer
-//    private final JButton cancelButton = new JButton("Cancel");
 
     DecimalFormat dFormat = new DecimalFormat("00");
 
@@ -60,11 +53,9 @@ public class Timer {
                 startButton.setBounds(300, 400, 100, 50);
                 stopButton.setBounds(300, 450, 100, 50);
                 resetButton.setBounds(400, 400, 100, 50);
-//                exitButton.setBounds(400, 450, 100, 50);
                 window.add(startButton);
                 window.add(stopButton);
                 window.add(resetButton);
-//                window.add(exitButton);
                 stopwatch();
             }
             case "t" -> {
@@ -82,12 +73,9 @@ public class Timer {
                 }
                 startButton.setBounds(350, 400, 100, 50);
                 stopButton.setBounds(350, 450, 100, 50);
-//                exitButton.setBounds(400, 400, 100, 50);
                 window.add(startButton);
                 window.add(stopButton);
-//                window.add(exitButton);
                 countdownTimer(selection);
-//                timer.start();
             }
         }
     }
@@ -120,19 +108,7 @@ public class Timer {
             minute = 0;
         });
 
-//        exitButton.addActionListener(e -> {
-//            timer.stop();
-////            JOptionPane.showMessageDialog(null, "Press OK to exit stopwatch");
-//            window.dispose();
-//        });
     }
-
-//    public void stopStopwatch() {
-//        JOptionPane.showMessageDialog(null, "Press OK to stop");
-//        timer.stop();
-//        JOptionPane.showMessageDialog(null, "Press OK to close stopwatch");
-//        window.dispose();
-//    }
 
     private void countdownTimer(int selection) {
         timer = new javax.swing.Timer(1000, e -> {
@@ -161,10 +137,7 @@ public class Timer {
                     filepath = "Electric-love.wav";
                 }
                 if (selection == 3) {
-                    filepath = "Geef1.wav";
-                }
-                if (selection == 4) {
-                    filepath = "Geef2.wav";
+                    filepath = "Geef.wav";
                 }
                 Music musicObj = new Music();
                 musicObj.playMusic(filepath);
@@ -172,20 +145,9 @@ public class Timer {
             }
         });
 
-//        startButton.addActionListener(e -> {
-//            if(minute != 0 && second != 0) {
-//                timer.start();
-//            }
-//        });
-
         startButton.addActionListener(e -> timer.start());
 
         stopButton.addActionListener(e -> timer.stop());
 
-//        exitButton.addActionListener(e -> {
-//            timer.stop();
-////            JOptionPane.showMessageDialog(null, "Press OK to close timer");
-//            window.dispose();
-//        });
     }
 }

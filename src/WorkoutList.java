@@ -16,14 +16,12 @@ public class WorkoutList extends JFrame implements ActionListener {
     JSpinner fontSizeSpinner;
     JButton fontColorButton;
     JComboBox<String> fontBox;
-//    JButton cb;
     JButton close;
 
     JMenuBar menuBar;
     JMenu fileMenu;
     JMenuItem openItem;
     JMenuItem saveItem;
-//    JMenuItem exitItem;
 
     public WorkoutList() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,26 +56,19 @@ public class WorkoutList extends JFrame implements ActionListener {
         fontBox.addActionListener(this);
         fontBox.setSelectedItem("Arial");
 
-//        cb = new JButton("Exit");
-//        cb.addActionListener(this);
-//        cb.addActionListener(e -> this.dispose());
-
         // ------- menubar -------
 
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
         openItem = new JMenuItem("Open");
         saveItem = new JMenuItem("Save");
-//        exitItem = new JMenuItem("Exit");
         close = new JButton("x");
 
         openItem.addActionListener(this);
         saveItem.addActionListener(this);
-//        exitItem.addActionListener(this);
 
         fileMenu.add(openItem);
         fileMenu.add(saveItem);
-//        fileMenu.add(exitItem);
         menuBar.add(close);
         menuBar.add(fileMenu);
 
@@ -90,7 +81,6 @@ public class WorkoutList extends JFrame implements ActionListener {
         this.add(fontSizeSpinner);
         this.add(fontColorButton);
         this.add(fontBox);
-//        this.add(cb);
         this.add(scrollPane);
         this.setVisible(true);
     }
@@ -160,8 +150,5 @@ public class WorkoutList extends JFrame implements ActionListener {
             }
         }
 
-//        if(e.getSource() == exitItem) {
-//            this.dispose();
-//        }
     }
 }
