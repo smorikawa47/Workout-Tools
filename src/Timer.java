@@ -4,6 +4,9 @@ import java.text.DecimalFormat;
 
 public class Timer {
 
+    private int min;
+    private int sec;
+
     private final JFrame window;
     private final JLabel counterLabel;
     Font font1 = new Font("Arial", Font.PLAIN, 70);
@@ -22,6 +25,11 @@ public class Timer {
     DecimalFormat dFormat = new DecimalFormat("00");
 
     JButton close;
+
+    public Timer () {
+        window = new JFrame("Clock");
+        counterLabel = new JLabel("");
+    }
 
     public Timer (String type, int min, int sec, int selection) {
 
@@ -78,6 +86,77 @@ public class Timer {
                 countdownTimer(selection);
             }
         }
+    }
+
+    public boolean setMin() {
+        min = 0;
+        boolean isMinValid = false;
+        while(!isMinValid) {
+            min = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter minute number (0-60 min):"));
+            if(min <= 60 && min >= 0) {
+                isMinValid = true;
+            }
+            else {
+                while(!isMinValid) {
+                    min = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter minute number (0-60 min):"));
+                    if(min <= 60 && min >= 0) {
+                        isMinValid = true;
+                    }
+                }
+            }
+        }
+        return isMinValid;
+    }
+
+    public boolean setSec() {
+        sec = 0;
+        boolean isSecValid = false;
+        while(!isSecValid) {
+            if(getMin() == 0) {
+                sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter second number (1-59 sec):"));
+                if(sec <= 59 && sec >= 1) {
+                    isSecValid = true;
+                }
+                else {
+                    while(!isSecValid) {
+                        sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (1-59 sec):"));
+                        if(sec <= 59 && sec >= 1) {
+                            isSecValid = true;
+                        }
+                    }
+                }
+            }
+            else {
+                sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter second number (0-59 sec):"));
+                if (sec <= 59 && sec >= 0) {
+                    isSecValid = true;
+                } else {
+                    while (!isSecValid) {
+                        sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (0-59 sec):"));
+                        if (sec <= 59 && sec >= 0) {
+                            isSecValid = true;
+                        }
+                    }
+                }
+            }
+        }
+        return isSecValid;
+    }
+
+
+    public void setTime() {
+        setMin();
+        if(getMin() != 60) {
+            setSec();
+        }
+    }
+
+    public int getSec() {
+        return sec;
+    }
+
+    public int getMin() {
+        return min;
     }
 
     private void stopwatch() {

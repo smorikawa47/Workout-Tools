@@ -65,76 +65,21 @@ public class Menu extends JFrame implements ActionListener {
 
         if(E.getSource() == item2) {
             type = "t";
-            int min = 0;
-            int sec = 0;
+            int min;
+            int sec;
             int selection;
-            boolean isMinValid = false;
-            boolean isSecValid = false;
 
-            String[] options = {"Beautiful Mistake - Maroon5", "Electric Love - BØRNS", "Surprise!"};
-            Object music = JOptionPane.showInputDialog(null, "Choose your music", "Input", JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-
-            if (music == "Beautiful Mistake - Maroon5") {
-                selection = 1;
-            }
-            else if (music == "Electric Love - BØRNS") {
-                selection = 2;
-            }
-            else if (music == "Surprise!") {
-                selection = 3;
-            }
-            else {
+            Music m = new Music();
+            m.setMusic();
+            if(m.getMusic() == 0) {
                 return;
             }
+            selection = m.getMusic();
 
-            while(!isMinValid) {
-                min = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter minute number (0-60 min):"));
-                if(min <= 60 && min >= 0) {
-                    isMinValid = true;
-                }
-                else {
-                    while(!isMinValid) {
-                        min = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter minute number (0-60 min):"));
-                        if(min <= 60 && min >= 0) {
-                            isMinValid = true;
-                        }
-                    }
-                }
-            }
-
-            if(min == 60) {
-                isSecValid = true;
-            }
-
-            while(!isSecValid) {
-                if(min == 0) {
-                    sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter second number (1-59 sec):"));
-                    if(sec <= 59 && sec >= 1) {
-                        isSecValid = true;
-                    }
-                    else {
-                        while(!isSecValid) {
-                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (1-59 sec):"));
-                            if(sec <= 59 && sec >= 1) {
-                                isSecValid = true;
-                            }
-                        }
-                    }
-                }
-                else {
-                    sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter second number (0-59 sec):"));
-                    if (sec <= 59 && sec >= 0) {
-                        isSecValid = true;
-                    } else {
-                        while (!isSecValid) {
-                            sec = Integer.parseInt(JOptionPane.showInputDialog(null, "Invalid input\nEnter second number (0-59 sec):"));
-                            if (sec <= 59 && sec >= 0) {
-                                isSecValid = true;
-                            }
-                        }
-                    }
-                }
-            }
+            Timer t = new Timer();
+            t.setTime();
+            min = t.getMin();
+            sec = t.getSec();
 
             new Timer(type, min, sec, selection);
         }
