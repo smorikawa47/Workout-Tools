@@ -1,5 +1,5 @@
 # Workout Tools
-I started working out as a way to stay physically healthy during the pandemic, and I wanted add a little bit of change to the generic audio that an iPhone plays when a timer ends. This experience inspired me to create this program that comes with stopwatch, timer with a music, and memo functionalities.
+I started working out as a way to stay physically healthy during the pandemic, and I wanted to add a little bit of change to the generic audio that an iPhone plays when a timer ends. This experience inspired me to create this program that comes with stopwatch, timer with a music, and memo functionalities.
 
 ## Stopwatch
 Stopwatch comes with start, stop, and reset buttons
