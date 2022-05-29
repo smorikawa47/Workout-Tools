@@ -1,6 +1,8 @@
 # Workout Tools
 
 ## Stopwatch
+Stopwatch comes with start, stop, and reset buttons
+
 https://user-images.githubusercontent.com/80607636/170854345-d33dea85-c254-4ed5-a733-18d691007de2.mp4
 
 ## Timer
