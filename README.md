@@ -7,7 +7,7 @@ Stopwatch comes with start, stop, and reset buttons
 https://user-images.githubusercontent.com/80607636/170854345-d33dea85-c254-4ed5-a733-18d691007de2.mp4
 
 ## Timer
-The user can set a timer and choose a music to play when the time is up
+The user can set a timer and choose a **music** to play when the time is up
 
 https://user-images.githubusercontent.com/80607636/170854353-554fc977-a345-4590-a824-feecb15f3b64.mp4
 
