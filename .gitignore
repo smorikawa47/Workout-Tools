@@ -5,7 +5,7 @@
 
 # intelliJ IDE files
 *.iml
-.DS_Store
+*.DS_Store
 .idea/
 out/
 workout.iml
