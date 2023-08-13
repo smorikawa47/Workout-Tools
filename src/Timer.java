@@ -210,13 +210,13 @@ public class Timer {
                 counterLabel.setText(ddMinute + ":" + ddSecond);
                 timer.stop();
                 if (selection == 1) {
-                    filepath = "beaut.wav";
+                    filepath = "MediaFiles/beaut.wav";
                 }
                 if (selection == 2) {
-                    filepath = "Electric-love.wav";
+                    filepath = "MediaFiles/Electric-love.wav";
                 }
                 if (selection == 3) {
-                    filepath = "Geef.wav";
+                    filepath = "MediaFiles/Geef.wav";
                 }
                 Music musicObj = new Music();
                 musicObj.playMusic(filepath);

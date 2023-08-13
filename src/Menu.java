@@ -42,7 +42,7 @@ public class Menu extends JFrame implements ActionListener {
         menuBar.add(close);
 
         try {
-            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("GymBackground.jpg")))));
+            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("MediaFiles/GymBackground.jpg")))));
         } catch (IOException e) {
             e.printStackTrace();
         }
