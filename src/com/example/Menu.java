@@ -1,3 +1,4 @@
+package com.example;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.File;
@@ -42,7 +43,7 @@ public class Menu extends JFrame implements ActionListener {
         menuBar.add(close);
 
         try {
-            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("MediaFiles/GymBackground.jpg")))));
+            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("../src/com/example/MediaFiles/GymBackground.jpg")))));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,3 +1,4 @@
+package com.example;
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
@@ -210,13 +211,13 @@ public class Timer {
                 counterLabel.setText(ddMinute + ":" + ddSecond);
                 timer.stop();
                 if (selection == 1) {
-                    filepath = "MediaFiles/beaut.wav";
+                    filepath = "../src/com/example/MediaFiles/beaut.wav";
                 }
                 if (selection == 2) {
-                    filepath = "MediaFiles/Electric-love.wav";
+                    filepath = "../src/com/example/MediaFiles/Electric-love.wav";
                 }
                 if (selection == 3) {
-                    filepath = "MediaFiles/Geef.wav";
+                    filepath = "../src/com/example/MediaFiles/Geef.wav";
                 }
                 Music musicObj = new Music();
                 musicObj.playMusic(filepath);

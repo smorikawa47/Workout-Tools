@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import com.example.Timer;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TimerTest {
